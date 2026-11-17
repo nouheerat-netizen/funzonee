@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta name="google-site-verification" content="XDTOmgQHYiqHS5K-re0qf1hz65VjXGjbRFMzOk7vkHE" />
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>FUNZONE – Mini Games</title>
+<link rel="stylesheet" href="style.css">
+
+</head>
+<body>
+<header class="nav" id="home">
+  <a class="logo" href="#home">🎮 FUN<span>ZONE</span></a>
+  <nav class="links"><a href="#home">Home</a><a href="#games">Games</a><a href="#categories">Categories</a></nav>
+  <div class="tools">
+    <button class="icon sndBtn" title="Mute / unmute sound">🔊</button>
+    <button class="icon" id="themeBtn" title="Light / dark mode">🌙</button>
+  </div>
+</header>
+
+<main>
+  <section class="hero">
+    <h1>Play. Win. <span>Repeat.</span></h1>
+    <p>20 quick mini-games for one or two players. No logins, no downloads – just pure fun.</p>
+    <div class="searchbar">
+      <input id="searchInput" type="search" placeholder="Search games…" aria-label="Search games" autocomplete="off">
+      <button id="clearSearch" class="icon" title="Clear search" hidden>✕</button>
+    </div>
+    <div class="heroBtns">
+      <button class="btn glow" id="randomBtn">🎲 Random Game</button>
+      <a class="btn ghost" href="#games">Browse Games</a>
+    </div>
+    <div class="stats">
+      <div><b id="stTotal">20</b><span>Total games</span></div>
+      <div><b id="stPlayed">0</b><span>Games played</span></div>
+      <div><b id="stWins">0</b><span>Wins</span></div>
+      <div><b id="stScore">0</b><span>Points earned</span></div>
+      <div><b id="stTime">0:00</b><span>Session time</span></div>
+    </div>
+  </section>
+
+  <section id="recentSection" hidden>
+    <h2>🕑 Recently Played</h2>
+    <div id="recentList" class="chips"></div>
+  </section>
+
+  <section id="categories">
+    <h2>Categories</h2>
+    <div id="filters" class="filters"></div>
+  </section>
+
+  <section id="games">
+    <h2>Game Collection <small id="resultCount"></small></h2>
+    <div id="gameGrid" class="grid"></div>
+    <div id="noResults" class="empty" hidden>
+      <div>🔍</div><p>No games found. Try another word or category!</p>
+      <button class="btn glow" id="resetBtn">Reset filters</button>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="logo">🎮 FUN<span>ZONE</span></div>
+  <div class="flinks"><a href="#home">Home</a><a href="#games">Games</a><a href="#categories">Categories</a><a href="#home">Back to top ↑</a></div>
+  <p>Made with ❤️ by N.Nouheera Taj</p>
+  <p>© 2026 FUNZONE.Session stats reset when you refresh.</p>
+</footer>
+
+<!-- Game modal -->
+<div id="modal" class="modal" hidden>
+  <div class="panel" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
+    <div class="ptop">
+      <h2 id="modalTitle"></h2>
+      <select id="modeSel" hidden aria-label="Game mode">
+        <option value="1">Single Player</option>
+        <option value="2">Two Players</option>
+      </select>
+      <span id="gameScore" class="pill">Score: 0</span>
+      <button class="icon sndBtn" title="Mute / unmute">🔊</button>
+      <button class="icon" id="closeBtn" title="Close (Esc)">✕</button>
+    </div>
+    <details id="rulesBox" open><summary>📖 How to play</summary><p id="rules"></p></details>
+    <div id="gameMsg" class="gmsg"></div>
+    <div id="stage" class="stage">
+      <div id="result" class="result" hidden><h3 id="resultText"></h3><button class="btn glow" id="againBtn">▶ Play again</button></div>
+    </div>
+    <div id="dpad" class="dpad" hidden>
+      <button data-k="ArrowUp">▲</button><button data-k="ArrowLeft">◀</button><button data-k="ArrowDown">▼</button><button data-k="ArrowRight">▶</button>
+    </div>
+    <div class="pbot">
+      <button class="btn ghost" id="pauseBtn">⏸ Pause</button>
+      <button class="btn glow" id="restartBtn">↻ Restart</button>
+    </div>
+  </div>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
